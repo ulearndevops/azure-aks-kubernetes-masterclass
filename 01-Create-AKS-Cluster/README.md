@@ -48,19 +48,16 @@
 - **Review + Create**
   - Click on **Create**
  
-**##Step-02.1 Create Via Bash Shell
-- Open the Azure CLI**
+**##Step-02.1 Create Via Bash Shell**
+**- Open the Azure CLI**
 
-Find the resource group name and copy it for later use:
+**Find the resource group name and copy it for later use:**
 az group list
 
-Create a variable for the resource group name:
-$RG= [insert the sandbox provided resource group]
-
-Create an AKS cluster:
+**Create an AKS cluster:**
 az aks create --resource-group $RG --name Cluster01 --node-count 3 --generate-ssh-keys --node-vm-size Standard_B2s --enable-managed-identity
 
-After it deploys, back in the Cloud Shell, configure kubectl so that commands can be run against the cluster:
+**After it deploys, back in the Cloud Shell, configure kubectl so that commands can be run against the cluster:**
 az aks get-credentials --name Cluster01 --resource-group $RG
 
 
